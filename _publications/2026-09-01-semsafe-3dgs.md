@@ -10,6 +10,8 @@ paperurl: 'https://arxiv.org/abs/2609.19330'
 citation: '<b>A. Mollaei Khass</b>, A. Cosse, and N. Motee. (2026). &quot;SemSafe-3DGS: Semantic Risk-Aware Active Navigation in Uncertain 3D Gaussian Splatting Maps.&quot; <i>SeMaNa Workshop, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>.'
 ---
 
+{% include base_path %}
+
 **Accepted for presentation at the SeMaNa 2026 workshop at IROS 2026.**
 
 Safety formulations for navigation usually reason about geometry alone. A consequence is that
@@ -27,7 +29,8 @@ constraint, and information acquisition is relaxed where it fights safety or tas
 evaluation covers semantic-dependent trajectory adaptation and execution on a real robot with
 Ackermann dynamics.
 
-**Links:** [arXiv](https://arxiv.org/abs/2609.19330)
+**Links:** [arXiv](https://arxiv.org/abs/2609.19330) &middot;
+[Workshop poster (PDF)]({{ base_path }}/files/semsafe-poster.pdf)
 
 ### BibTeX
 

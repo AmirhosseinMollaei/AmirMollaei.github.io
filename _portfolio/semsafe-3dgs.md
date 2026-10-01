@@ -4,6 +4,8 @@ collection: portfolio
 excerpt: "SeMaNa Workshop, IROS 2026. Class-dependent risk weights mean a glass door and a concrete pillar stop producing the same control response. Validated on a real Ackermann-steered robot."
 ---
 
+{% include base_path %}
+
 {% include demo-video.html src="semsafe.mp4" caption="Semantic risk-aware active navigation in an uncertain 3D Gaussian Splatting map." %}
 
 Safety formulations for navigation almost always reason about geometry alone. The consequence is
@@ -24,3 +26,4 @@ in simulation.
 **Accepted for presentation** at the SeMaNa 2026 workshop, IEEE/RSJ IROS 2026.
 
 - [Paper on arXiv](https://arxiv.org/abs/2609.19330)
+- [Workshop poster (PDF)]({{ base_path }}/files/semsafe-poster.pdf)

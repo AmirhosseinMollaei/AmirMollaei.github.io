@@ -20,9 +20,9 @@ solved at control rates, so neither one is a post-hoc filter on the other.
 
 > *I am looking for a **Summer 2027 research internship** in robot perception, planning, and control. If your team works on these problems, I would be glad to hear from you.*
 
-{% include demo-video.html src="nbv-risk-averse.mp4" caption="Risk-averse navigation with active next-best-view selection on an online 3D Gaussian-splat map (ICRA 2026)." %}
+{% include demo-video.html src="hero.mp4" caption="Safe active perception running online in Isaac Sim: a 3D Gaussian-splat map, a risk-aware barrier, and next-best-view selection in the loop." %}
 
-More demos and write-ups are on the [Research]({{ base_path }}/portfolio/) page.
+Each paper's demo is on the [Research]({{ base_path }}/portfolio/) page.
 
 ## Research
 
@@ -66,6 +66,7 @@ with consensus ADMM, so no agent needs the full map.
 <!-- - **[Mon YYYY]** What happened. -->
 
 - **[Sep 2026]** Posted *AGILE-GS* to arXiv, under review at WACV 2027.
+- **[Sep 2026]** Posted the *LiTe-GS* preprint to arXiv.
 - **[Sep 2026]** Posted the *Splat-CBF* preprint to arXiv.
 - **[Sep 2026]** Presented *SemSafe-3DGS* at the SeMaNa workshop, IROS 2026.
 - **[Jul 2026]** Presented at ECC 2026 in Reykjavik.
