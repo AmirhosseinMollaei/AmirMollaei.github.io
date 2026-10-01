@@ -10,7 +10,7 @@ author_profile: true
 <p>Each entry below is a paper with its demo. Clips start when they scroll into view. Follow a
 title for the full write-up, the method, and links to the paper and code.</p>
 
-{% assign entries = site.portfolio | sort: "date" | reverse %}
+{% assign entries = site.portfolio | sort: "order" %}
 {% for post in entries %}
   <div class="list__item">
     <article class="archive__item">

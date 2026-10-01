@@ -1,18 +1,22 @@
 {% comment %}
 Embeds a looping demo video from the files/ directory.
 
-  {% include demo-video.html src="caap.mp4" caption="Optional caption." %}
+  {% include demo-video.html src="trace.mp4" caption="Optional caption." %}
 
 The video only renders if files/<src> is actually present in the repository.
 Until then a visible TODO box is shown instead, so the page never renders an
 empty player. Drop the .mp4 into files/ and the player appears with no markup
 change. A matching <name>-poster.jpg is used as the poster frame if present.
 
+The <video> tag is emitted on ONE line and carries no inline style attribute.
+The site runs the compress_html layout, which mangles attributes split across
+newlines around a Liquid tag: it previously ate the opening of style="width:
+and left a malformed tag. Sizing lives in a rule in _includes/head.html.
+
 Playback is lazy. The clip carries preload="none" and no autoplay attribute;
 a shared IntersectionObserver starts it when it scrolls into view and pauses
 it when it leaves. Several autoplaying clips on one page would otherwise pull
-tens of megabytes on load, which is slow on a phone. The result still plays
-without anyone pressing play.
+tens of megabytes on load. The result still plays without anyone pressing play.
 
 All URLs go through base_path (site.url + site.baseurl) so this works whether
 the site is served from the domain root or from a repository subpath.
@@ -23,16 +27,11 @@ the site is served from the domain root or from a repository subpath.
 {% assign poster_rel = "/files/" | append: poster_name %}
 {% assign video_file = site.static_files | where: "path", video_rel | first %}
 {% assign poster_file = site.static_files | where: "path", poster_rel | first %}
+{% if poster_file %}{% capture poster_attr %} poster="{{ base_path }}{{ poster_rel }}"{% endcapture %}{% else %}{% assign poster_attr = "" %}{% endif %}
 {% if video_file %}
 <figure class="demo-video">
-  <video class="demo-video__player" loop muted playsinline preload="none"
-         {% if poster_file %}poster="{{ base_path }}{{ poster_rel }}"{% endif %}
-         style="width: 100%; height: auto;">
-    <source src="{{ base_path }}{{ video_rel }}" type="video/mp4">
-    Your browser does not support embedded video.
-    <a href="{{ base_path }}{{ video_rel }}">Download the clip</a> instead.
-  </video>
-  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+<video class="demo-video__player" loop muted playsinline preload="none"{{ poster_attr }}><source src="{{ base_path }}{{ video_rel }}" type="video/mp4">Your browser does not support embedded video. <a href="{{ base_path }}{{ video_rel }}">Download the clip</a> instead.</video>
+{% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
 </figure>
 <script>
 /* Registered once per page, however many clips the page contains. */

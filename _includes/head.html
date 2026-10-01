@@ -21,3 +21,11 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+
+<!-- Demo clip sizing. Kept here rather than as an inline style attribute,
+     which the compress_html layout mangles when attributes span lines. -->
+<style>
+  .demo-video { margin: 1.5em 0; }
+  .demo-video__player { display: block; width: 100%; height: auto; background: #000; }
+  .demo-video figcaption { font-size: 0.8em; line-height: 1.5; opacity: .75; padding-top: .4em; }
+</style>

@@ -1,12 +1,10 @@
 ---
 title: "Conflict-Aware Active Perception and Control"
 collection: portfolio
+order: 7
 date: 2026-12-01
-video: caap.mp4
 excerpt: "Invited session paper, CDC 2026. Seeing more and staying safe genuinely conflict. Safety is a hard CBF constraint, perception is relaxed through slack, and both live in one quadratic program."
 ---
-
-{% include demo-video.html src="caap.mp4" caption="Conflict-aware active perception and control in a 3D Gaussian Splatting field." %}
 
 The informative viewpoint and the safe viewpoint are usually not the same viewpoint. What a robot
 most needs to look at is the region it has not mapped, and that is exactly the region it cannot yet

@@ -1,6 +1,7 @@
 ---
 title: "LiTe-GS: Oracle-Efficient Next Best View Selection"
 collection: portfolio
+order: 5
 date: 2026-09-24
 video: lite-gs.mp4
 excerpt: "Under review, WACV 2027. Scores a randomized subset of candidate views instead of the full pool, with proved oracle complexity and an explicit dial between efficiency and approximation quality."
