@@ -12,5 +12,12 @@
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
+<!-- Icons. The files ship with the theme but were not linked from anywhere. -->
+<link rel="icon" href="{{ base_path }}/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="{{ base_path }}/images/favicon-192x192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="{{ base_path }}/images/apple-touch-icon-180x180.png">
+<link rel="manifest" href="{{ base_path }}/images/manifest.json">
+
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">

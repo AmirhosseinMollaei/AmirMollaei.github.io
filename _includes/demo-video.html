@@ -8,20 +8,24 @@ Until then a visible TODO box is shown instead, so the page never renders an
 empty player. Drop the .mp4 into files/ and the player appears with no markup
 change. If a matching <name>-poster.jpg is also present it is used as the
 poster frame.
+
+All URLs go through base_path (site.url + site.baseurl) so this works whether
+the site is served from the domain root or from a repository subpath.
 {% endcomment %}
-{% assign video_path = "/files/" | append: include.src %}
+{% include base_path %}
+{% assign video_rel = "/files/" | append: include.src %}
 {% assign poster_name = include.src | replace: ".mp4", "-poster.jpg" %}
-{% assign poster_path = "/files/" | append: poster_name %}
-{% assign video_file = site.static_files | where: "path", video_path | first %}
-{% assign poster_file = site.static_files | where: "path", poster_path | first %}
+{% assign poster_rel = "/files/" | append: poster_name %}
+{% assign video_file = site.static_files | where: "path", video_rel | first %}
+{% assign poster_file = site.static_files | where: "path", poster_rel | first %}
 {% if video_file %}
-<figure style="margin: 1.5em 0;">
+<figure class="demo-video">
   <video autoplay loop muted playsinline preload="metadata"
-         {% if poster_file %}poster="{{ poster_path }}"{% endif %}
+         {% if poster_file %}poster="{{ base_path }}{{ poster_rel }}"{% endif %}
          style="width: 100%; height: auto;">
-    <source src="{{ video_path }}" type="video/mp4">
+    <source src="{{ base_path }}{{ video_rel }}" type="video/mp4">
     Your browser does not support embedded video.
-    <a href="{{ video_path }}">Download the clip</a> instead.
+    <a href="{{ base_path }}{{ video_rel }}">Download the clip</a> instead.
   </video>
   {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
 </figure>

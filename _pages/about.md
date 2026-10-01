@@ -7,14 +7,22 @@ redirect_from:
   - /about.html
 ---
 
+{% include base_path %}
+
 I am a PhD student in [Mechanical Engineering](https://engineering.lehigh.edu/mem) at
 [Lehigh University](https://www.lehigh.edu/) in Bethlehem, Pennsylvania, where I started in 2023.
 I work in the Autonomous and Intelligent Robotics Lab (AIRLab) with
 [Prof. Nader Motee](https://engineering.lehigh.edu/faculty/nader-motee).
-My research is on how a robot can stay safe while it is still working out what its surroundings
-look like.
+
+I work on robots that have to stay safe while they are still figuring out what is around them. My
+papers put the safety guarantee and the perception objective into the same optimization problem,
+solved at control rates, so neither one is a post-hoc filter on the other.
 
 > *I am looking for a **Summer 2027 research internship** in robot perception, planning, and control. If your team works on these problems, I would be glad to hear from you.*
+
+{% include demo-video.html src="nbv-risk-averse.mp4" caption="Risk-averse navigation with active next-best-view selection on an online 3D Gaussian-splat map (ICRA 2026)." %}
+
+More demos and write-ups are on the [Research]({{ base_path }}/portfolio/) page.
 
 ## Research
 
@@ -26,15 +34,23 @@ explicitly and solves it fast enough to run online.
 
 ### Safety as a hard constraint
 
-I define risk-averse control barrier functions over an entire 3D Gaussian Splatting map. The safety
-condition is checked against the uncertainty the map itself carries, rather than against an
-occupancy grid that has already been thresholded to free or occupied.
+I build control barrier functions from Average Value-at-Risk collision metrics evaluated over an
+entire 3D Gaussian Splatting map. Because the risk metric reads the geometric uncertainty the map
+carries, what the barrier certifies is forward invariance of a safe set defined against that
+uncertainty. Nothing is thresholded into free or occupied first, so the guarantee is about the scene
+rather than about a grid.
+
+In [SemSafe-3DGS]({{ base_path }}/portfolio/semsafe-3dgs/) the clearance model is also modulated by semantics, with
+class-dependent risk weights, so obstacles that are geometrically alike but consequentially
+different stop producing the same control response.
 
 ### Perception as a soft objective
 
-View quality is scored with an information-theoretic measure, and it enters the same quadratic
-program as a constraint that can be relaxed. The weight on its slack variable adapts when the robot
-runs out of safe ways to see more.
+View quality enters the same quadratic program as a constraint that can be relaxed. I score it with
+risk-aware expected information gain, and add perception barrier functions that turn the camera
+toward the local direction of information ascent. The perception constraints carry slack variables,
+so when there is no safe way left to see more, perception yields and the program still solves
+instead of going infeasible.
 
 ### Scaling to teams
 

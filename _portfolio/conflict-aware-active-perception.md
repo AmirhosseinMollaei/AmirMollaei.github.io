@@ -1,23 +1,29 @@
 ---
 title: "Conflict-Aware Active Perception and Control"
 collection: portfolio
-excerpt: "Invited session paper, CDC 2026. Seeing more and staying safe are in conflict. This work puts both in one quadratic program over a 3D Gaussian Splatting field."
+excerpt: "Invited session paper, CDC 2026. Seeing more and staying safe genuinely conflict. Safety is a hard CBF constraint, perception is relaxed through slack, and both live in one quadratic program."
 ---
 
 {% include demo-video.html src="caap.mp4" caption="Conflict-aware active perception and control in a 3D Gaussian Splatting field." %}
 
-A robot that wants to reduce its uncertainty about a scene is pulled toward the parts of the scene
-it has not mapped. Those are the same parts it cannot yet certify as safe to enter. The two
-objectives share one control input, so one of them has to give way.
+The informative viewpoint and the safe viewpoint are usually not the same viewpoint. What a robot
+most needs to look at is the region it has not mapped, and that is exactly the region it cannot yet
+certify as free. Most pipelines resolve this with a weight someone tuned. This work resolves it in
+the formulation.
 
-This work writes the conflict into a single quadratic program. Safety is a hard constraint, built
-from control barrier functions defined over the whole 3D Gaussian Splatting field, so the condition
-is checked against the uncertainty the map carries. View quality is a soft constraint in the same
-program, scored with an information-theoretic measure. When no safe motion improves the view, the
-perception term is what relaxes.
+Safety is enforced by a control barrier function derived from an Average Value-at-Risk collision
+metric over the 3D Gaussian Splatting field. Because that metric is built from the geometric
+uncertainty the map actually carries, what the CBF guarantees is forward invariance of a safe set
+defined against that uncertainty. Nothing gets thresholded into free or occupied first.
 
-This paper was accepted as an **invited session paper** at the IEEE Conference on Decision and
-Control (CDC) 2026.
+Perception contributes two things: a risk-aware expected-information-gain term for choosing the next
+view, and perception barrier functions that rotate the camera toward the local direction of
+information ascent. Safety and perception then meet in one quadratic program, where safety is a hard
+constraint and the perception constraints carry slack variables. When the two cannot both be
+satisfied, perception yields and the program still has a solution.
+
+**Accepted as an invited session paper** at IEEE CDC 2026.
 
 - [Paper on arXiv](https://arxiv.org/abs/2605.20566)
-- `TODO: code repository link, if there is one to share`
+- [Project page](https://sircesoc.github.io/Conflict_Aware_Active_Perception/)
+- [Code](https://github.com/sircesoc/Conflict_Aware_Active_Perception)

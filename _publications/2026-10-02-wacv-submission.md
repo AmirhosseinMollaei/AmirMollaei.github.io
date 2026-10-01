@@ -11,7 +11,7 @@ citation: 'TODO: full citation for the WACV submission, including title, author 
 
 **Placeholder entry. This paper is under review at WACV.**
 
-Everything below needs to be supplied before this page is worth publishing:
+Still needed before this page is worth showing:
 
 - `TODO: title`
 - `TODO: author list`
@@ -19,5 +19,5 @@ Everything below needs to be supplied before this page is worth publishing:
 - `TODO: a one-paragraph summary`
 - `TODO: arXiv or preprint link, if there is one`
 
-If you would rather this entry not appear on the site yet, delete
-`_publications/2026-10-02-wacv-submission.md` and it disappears from the Publications page.
+To hide it in the meantime, delete `_publications/2026-10-02-wacv-submission.md` and it
+disappears from the Publications page.

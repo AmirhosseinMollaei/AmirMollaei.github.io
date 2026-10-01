@@ -13,10 +13,10 @@ title                    : "Amir Mollaei"
 title_separator          : "-"
 name                     : &name "Amirhossein Mollaei"
 description              : &description "Amirhossein Mollaei, PhD student in Mechanical Engineering at Lehigh University, working on safe active perception, planning and control for robots."
-url                      : "https://amirmollaei.github.io"
+url                      : "https://amirhosseinmollaei.github.io"
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "AmirMollaei/AmirMollaei.github.io"
+baseurl                  : "/AmirMollaei.github.io" # repo subpath; set to "" if the repo is renamed to AmirhosseinMollaei.github.io
+repository               : "AmirhosseinMollaei/AmirMollaei.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -51,7 +51,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "AmirMollaei"
+  github           : "AmirhosseinMollaei"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
