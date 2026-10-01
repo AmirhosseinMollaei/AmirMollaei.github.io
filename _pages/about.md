@@ -13,69 +13,55 @@ I am a PhD student in [Mechanical Engineering](https://engineering.lehigh.edu/me
 [Lehigh University](https://www.lehigh.edu/), in the
 [Autonomous and Intelligent Robotics Lab (AIRLab)](https://robotics.lehigh.edu/), advised by
 [Prof. Nader Motee](https://engineering.lehigh.edu/faculty/nader-motee). I started in 2023 and
-passed the doctoral general examination in March 2026.
+passed my doctoral general examination in March 2026. Before Lehigh I did my B.Sc. at Sharif
+University of Technology.
 
-My research sits between robot perception and safety-critical control. A robot sent into an
-unmapped space has to build its own scene representation while it moves, and it has to decide where
-to point its camera next. Both decisions are made under a map that is still wrong in places the
-robot cannot identify in advance. I work on making those decisions jointly, with a safety guarantee
-that survives the uncertainty in the representation itself.
+I work on robots that have to stay safe while they are still building the map they depend on. What
+keeps me on this problem is that it is really one problem rather than two. The viewpoint a robot
+most wants is usually the one it can least afford to approach. A lot of systems settle that with a
+weight someone tuned by hand. I would rather write the conflict down and solve it.
 
-The representation I build on is **3D Gaussian Splatting**. An explicit, differentiable radiance
-field is what makes safety-critical control tractable here: it rasterizes fast enough to stay in a
-control loop, it admits analytic spatial queries for geometric risk, and its parameters carry an
-uncertainty that can be read directly rather than thresholded away. Implicit fields give comparable
-photometric quality but not the rendering latency or the analytic structure that a real-time barrier
-condition needs.
+So my work puts the safety certificate and the perception objective into a single optimization
+problem over a 3D Gaussian-splat map, solved fast enough to sit inside the control loop. Safety
+stays a hard constraint. Perception is what yields when there is no safe way to see more.
 
-On top of that representation I treat **active perception** as an optimization problem rather than a
-heuristic. Candidate viewpoints are scored by expected information gain, typically through the
-Fisher information of the splat parameters, and next-best-view selection is posed on the pose
-manifold SE(3) and solved with Riemannian gradient methods. The recurring difficulty is cost: an
-information oracle evaluated over every candidate does not fit in a control budget, so a thread of
-my work is about getting the same view quality with a small fraction of the oracle calls.
+Three questions take up most of my time: how to make view selection cheap enough to run online, how
+to make a safety guarantee hold against the uncertainty the map actually carries instead of a
+thresholded occupancy grid, and how to extend both to teams of robots that cannot share their maps.
 
-**Safety** is where the perception objective stops being free. The most informative viewpoint is
-usually adjacent to the region the map understands least, which is exactly the region whose
-collision margins cannot be trusted. I encode safety as a control barrier function built on an
-Average Value-at-Risk collision metric over the Gaussian field, so what gets certified is forward
-invariance of a safe set defined against the map's own geometric uncertainty. Perception then enters
-the same quadratic program as a relaxable constraint with slack, which makes the tradeoff explicit:
-safety is never traded away, and informative motion yields only when there is no safe way to take
-it.
+I care about getting this onto hardware. My methods run in Isaac Sim and on real platforms,
+including Ackermann-steered mobile robots and a Kinova Gen3 manipulator.
 
-The same machinery extends in two directions. Semantics let the risk model distinguish obstacles
-that are geometrically alike but carry different consequences. Multi-robot settings turn
-next-best-view selection into a coupled problem across agents, which I handle with distributed
-optimization, including a formulation where agents coordinate acquisition without disclosing their
-own observations or map parameters.
+<div style="border:1px solid rgba(128,128,128,.4); border-left:5px solid #c9521f; padding:1.1em 1.3em; margin:2em 0; border-radius:3px;" markdown="1">
+**Open to a Summer 2027 research internship.** I am looking for a position in robot perception,
+planning, and control. If your team works on these problems, I would be glad to hear from you:
+[ammb23@lehigh.edu](mailto:ammb23@lehigh.edu).
+</div>
 
-I care that this runs on hardware, not only in simulation. The methods have been validated in Isaac
-Sim and on physical platforms, including Ackermann-steered mobile robots and a Kinova Gen3 7-DoF
-manipulator.
-
-> *I am looking for a **Summer 2027 research internship** in robot perception, planning, and control. If your team works on these problems, I would be glad to hear from you.*
+## Demo
 
 {% include demo-video.html src="hero.mp4" caption="Safe active perception running online in Isaac Sim: a 3D Gaussian-splat map, a risk-aware barrier, and next-best-view selection in the loop." %}
 
 ## Research interests
 
-- **Safe active perception** — joint perception and control under an uncertain map
-- **Safety-critical control** — control barrier functions, forward invariance, CBF-QP formulations
-- **Risk-aware control** — Average Value-at-Risk and other coherent risk measures over learned maps
+- **Safe active perception** — joint perception and control under a map that is still uncertain
 - **Next-best-view planning** — information-theoretic view selection, expected information gain,
   Fisher information, oracle-efficient selection
 - **3D Gaussian Splatting** — explicit differentiable radiance fields for real-time robotics
 - **Active scene learning** — online map construction driven by what the robot still needs to see
-- **Semantic risk reasoning** — class-dependent clearance and semantically attributed maps
 - **Distributed and multi-robot optimization** — consensus ADMM, coupled next-best-view problems,
   privacy-preserving coordination
-- **Optimization on manifolds** — Riemannian methods for pose and viewpoint optimization
-- **Sim-to-real robotics** — Isaac Sim and Isaac Lab, Ackermann platforms, 7-DoF manipulation
 
-Each paper below has a demo. The full list is on the
-[Publications]({{ base_path }}/publications/) page, and longer write-ups are on the
-[Research]({{ base_path }}/portfolio/) page.
+## Recent publications
+
+{% assign recent = site.publications | sort: "date" | reverse %}
+{% for paper in recent limit: 5 %}
+- [{{ paper.title }}]({{ base_path }}{{ paper.url }}) &middot; *{{ paper.venue }}*
+{% endfor %}
+
+See the [full publication list]({{ base_path }}/publications/), or
+[my Google Scholar profile](https://scholar.google.com/citations?user=Epox5eQAAAAJ&hl=en).
+Each paper's demo video is on the [Research]({{ base_path }}/portfolio/) page.
 
 ## News
 
