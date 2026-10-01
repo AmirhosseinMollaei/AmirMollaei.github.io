@@ -65,7 +65,8 @@ with consensus ADMM, so no agent needs the full map.
 <!-- To add a news item, copy the line format below and put it at the TOP of this list. -->
 <!-- - **[Mon YYYY]** What happened. -->
 
-- **[Oct 2026]** Submitted *Splat-CBF* to ICRA 2027.
+- **[Sep 2026]** Posted *AGILE-GS* to arXiv, under review at WACV 2027.
+- **[Sep 2026]** Posted the *Splat-CBF* preprint to arXiv.
 - **[Sep 2026]** Presented *SemSafe-3DGS* at the SeMaNa workshop, IROS 2026.
 - **[Jul 2026]** Presented at ECC 2026 in Reykjavik.
 - **[Jun 2026]** Presented at ICRA 2026 in Vienna.

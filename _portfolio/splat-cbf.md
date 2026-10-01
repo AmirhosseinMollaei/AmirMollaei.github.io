@@ -1,23 +1,26 @@
 ---
 title: "Splat-CBF: Safe Next-Best-View Control"
 collection: portfolio
-excerpt: "Under review at ICRA 2027. The barrier condition is built on the Gaussian-splat map itself, so the safety certificate is about the scene rather than about a thresholded grid."
+excerpt: "Preprint, 2026. One smooth hard constraint from the Average Value-at-Risk of the Gaussian field, plus a second barrier for informative camera orientations. Runs on a Kinova manipulator and an Ackermann-drive robot."
 ---
 
 {% include demo-video.html src="splatcbf.mp4" caption="Safe next-best-view control in a 3D Gaussian-splat map." %}
 
-The standard way to get a safety guarantee out of a learned map is to threshold it into free and
-occupied cells, then plan against the result. That step is where the information goes. Thresholding
-discards how confident the map was, and what you can prove afterwards is a property of the grid, not
-of the environment the robot is in.
+Where to look and how to move are one question for a robot in an unmapped space, and the two answers
+pull apart. The regions most worth observing are the ones the map knows least about, which are
+exactly the regions where the robot cannot trust its collision margins.
 
-Splat-CBF puts the barrier condition on the Gaussian-splat representation directly, so the safety
-check reads the uncertainty the splats carry. Next-best-view control then runs inside that
-constraint. The robot pursues informative viewpoints while staying in the set it can still certify,
-and the certificate degrades gracefully where the map is genuinely unsure rather than flipping at a
-threshold.
+Splat-CBF steers the camera toward the next best view while collision avoidance stays a hard
+constraint. A risk-aware barrier turns the Average Value-at-Risk of the Gaussian field into a single
+smooth hard constraint. A second barrier rewards camera orientations with high expected Fisher
+information gain near the planned path. The two meet in a quadratic program where safety is hard and
+perception is soft, and the slack penalty adapts to how often perception has already been relaxed
+and how close the robot is to an uncertain region.
 
-**Status:** under review at IEEE ICRA 2027, submitted October 2026.
+The method is verified in indoor simulation, on an Isaac Kinova manipulator, and on an
+Ackermann-drive robot. It navigates faster and gathers more information than safety-only and
+perception-only baselines, and gives up informative motion only when safety requires it.
 
-- `TODO: arXiv link once the preprint is posted`
-- `TODO: code repository link, if there is one to share`
+**Preprint, 2026.**
+
+- [Paper on arXiv](https://arxiv.org/abs/2609.23100)
