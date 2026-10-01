@@ -1,7 +1,7 @@
 ---
 title: "SemSafe-3DGS: Semantic Risk-Aware Active Navigation"
 collection: portfolio
-order: 6
+order: 7
 date: 2026-09-01
 excerpt: "SeMaNa Workshop, IROS 2026. Class-dependent risk weights mean a glass door and a concrete pillar stop producing the same control response. Validated on a real Ackermann-steered robot."
 ---
