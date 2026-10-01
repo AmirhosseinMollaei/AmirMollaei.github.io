@@ -36,8 +36,21 @@ line at the top in the same format:
 `category: conferences` for accepted papers and `category: manuscripts` for
 work under review.
 
-**Add a demo video.** Drop the `.mp4` into `files/`, then reference it from a
-page in `_portfolio/`:
+**Add a demo video.** Drop the `.mp4` into `files/`. The pages are already
+wired for these names, so a file dropped in with the right name appears on the
+site by itself:
+
+| Paper | Filename to use |
+|---|---|
+| Active NBV for Risk-Averse Path Planning (ICRA 2026) | `files/nbv-risk-averse.mp4` (present) |
+| Conflict-Aware Active Perception (CDC 2026) | `files/caap.mp4` (present) |
+| SemSafe-3DGS (SeMaNa / IROS 2026) | `files/semsafe.mp4` |
+| Splat-CBF (preprint) | `files/splatcbf.mp4` |
+
+Keep clips under about 20 MB. GitHub refuses any file over 100 MB, and the
+whole repository is what GitHub Pages serves.
+
+To use a clip on a new page:
 
 ```liquid
 {% include demo-video.html src="yourclip.mp4" caption="Optional caption." %}

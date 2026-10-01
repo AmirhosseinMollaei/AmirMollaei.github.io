@@ -86,6 +86,8 @@ author:
 publication_category:
   conferences:
     title: 'Conference and Workshop Papers'
+  preprints:
+    title: 'Preprints'
   manuscripts:
     title: 'Under Review'
 
