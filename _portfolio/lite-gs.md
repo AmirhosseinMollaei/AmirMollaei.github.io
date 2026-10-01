@@ -1,7 +1,9 @@
 ---
 title: "LiTe-GS: Oracle-Efficient Next Best View Selection"
 collection: portfolio
-excerpt: "Preprint, 2026. Scores a randomized subset of candidate views instead of the full pool, with proved oracle complexity and an explicit dial between efficiency and approximation quality."
+date: 2026-09-24
+video: lite-gs.mp4
+excerpt: "Under review, WACV 2027. Scores a randomized subset of candidate views instead of the full pool, with proved oracle complexity and an explicit dial between efficiency and approximation quality."
 ---
 
 {% include demo-video.html src="lite-gs.mp4" caption="Oracle-efficient next-best-view selection for 3D Gaussian Splatting." %}
@@ -19,6 +21,6 @@ efficiency and approximation quality. The paper proves bounds on both.
 On Blender and Mip-NeRF 360, reconstruction quality holds up against Fisher-information baselines
 while the number of Fisher-oracle evaluations drops substantially across acquisition settings.
 
-**Preprint, 2026.**
+**Under review** at WACV 2027.
 
 - [Paper on arXiv](https://arxiv.org/abs/2609.30393)

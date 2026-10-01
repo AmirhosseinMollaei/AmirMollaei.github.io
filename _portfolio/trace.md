@@ -1,6 +1,8 @@
 ---
 title: "TRACE: Privacy-Preserving Next-Best-View Selection"
 collection: portfolio
+date: 2026-10-01
+video: trace.mp4
 excerpt: "Under review, ICRA 2027. A distributed next-best-view protocol that coordinates information acquisition across a team while each robot keeps its own observations and map parameters private."
 ---
 

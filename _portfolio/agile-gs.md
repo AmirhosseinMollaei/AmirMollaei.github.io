@@ -1,6 +1,8 @@
 ---
 title: "AGILE-GS: Anchor-Guided Fast Next-Best-View Selection"
 collection: portfolio
+date: 2026-09-28
+video: agile-gs.mp4
 excerpt: "Under review, WACV 2027. Separates searching for information from choosing a camera, so the expensive oracle never has to score the whole candidate pool. One to two orders of magnitude less selection latency."
 ---
 

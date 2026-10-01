@@ -1,12 +1,11 @@
 ---
 title: "SemSafe-3DGS: Semantic Risk-Aware Active Navigation"
 collection: portfolio
+date: 2026-09-01
 excerpt: "SeMaNa Workshop, IROS 2026. Class-dependent risk weights mean a glass door and a concrete pillar stop producing the same control response. Validated on a real Ackermann-steered robot."
 ---
 
 {% include base_path %}
-
-{% include demo-video.html src="semsafe.mp4" caption="Semantic risk-aware active navigation in an uncertain 3D Gaussian Splatting map." %}
 
 Safety formulations for navigation almost always reason about geometry alone. The consequence is
 that two obstacles with the same shape get the same clearance, even when the cost of touching them

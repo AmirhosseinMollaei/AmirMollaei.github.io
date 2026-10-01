@@ -1,6 +1,8 @@
 ---
 title: "Splat-CBF: Safe Next-Best-View Control"
 collection: portfolio
+date: 2026-09-19
+video: splatcbf.mp4
 excerpt: "Under review, ICRA 2027. One smooth hard constraint from the Average Value-at-Risk of the Gaussian field, plus a second barrier for informative camera orientations. Runs on a Kinova manipulator and an Ackermann-drive robot."
 ---
 

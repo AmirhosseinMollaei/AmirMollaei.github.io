@@ -1,6 +1,8 @@
 ---
 title: "Conflict-Aware Active Perception and Control"
 collection: portfolio
+date: 2026-12-01
+video: caap.mp4
 excerpt: "Invited session paper, CDC 2026. Seeing more and staying safe genuinely conflict. Safety is a hard CBF constraint, perception is relaxed through slack, and both live in one quadratic program."
 ---
 

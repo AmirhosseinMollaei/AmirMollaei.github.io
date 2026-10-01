@@ -1,14 +1,30 @@
 ---
 layout: archive
-title: "Portfolio"
+title: "Recent publications"
 permalink: /portfolio/
 author_profile: true
 ---
 
 {% include base_path %}
 
+<p>Each entry below is a paper with its demo. Clips start when they scroll into view. Follow a
+title for the full write-up, the method, and links to the paper and code.</p>
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
+{% assign entries = site.portfolio | sort: "date" | reverse %}
+{% for post in entries %}
+  <div class="list__item">
+    <article class="archive__item">
+      <h2 class="archive__item-title">
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
+      </h2>
+
+      {% if post.excerpt %}
+        <p class="archive__item-excerpt">{{ post.excerpt | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+      {% endif %}
+
+      {% if post.video %}
+        {% include demo-video.html src=post.video %}
+      {% endif %}
+    </article>
+  </div>
 {% endfor %}
-

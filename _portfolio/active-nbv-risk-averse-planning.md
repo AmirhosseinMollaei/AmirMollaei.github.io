@@ -1,6 +1,8 @@
 ---
 title: "Active Next-Best-View Optimization for Risk-Averse Path Planning"
 collection: portfolio
+date: 2026-06-01
+video: nbv-risk-averse.mp4
 excerpt: "ICRA 2026. Risk-averse path refinement and next-best-view selection driven from the same online Gaussian-splat map, so the robot looks where it is about to move. Includes video and the full pipeline figure."
 ---
 
