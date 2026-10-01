@@ -25,7 +25,12 @@
 <!-- Demo clip sizing. Kept here rather than as an inline style attribute,
      which the compress_html layout mangles when attributes span lines. -->
 <style>
-  .demo-video { margin: 1.5em 0; }
+  /* Clips sit at 75% of the text column so they read as figures rather than
+     taking over the page. Full width on narrow screens, where 75% is too small. */
+  .demo-video { margin: 1.5em 0; max-width: 75%; }
   .demo-video__player { display: block; width: 100%; height: auto; background: #000; }
   .demo-video figcaption { font-size: 0.8em; line-height: 1.5; opacity: .75; padding-top: .4em; }
+  @media (max-width: 768px) {
+    .demo-video { max-width: 100%; }
+  }
 </style>
