@@ -1,7 +1,7 @@
 ---
 title: "Splat-CBF: Safe Next-Best-View Control"
 collection: portfolio
-excerpt: "Preprint, 2026. One smooth hard constraint from the Average Value-at-Risk of the Gaussian field, plus a second barrier for informative camera orientations. Runs on a Kinova manipulator and an Ackermann-drive robot."
+excerpt: "Under review, ICRA 2027. One smooth hard constraint from the Average Value-at-Risk of the Gaussian field, plus a second barrier for informative camera orientations. Runs on a Kinova manipulator and an Ackermann-drive robot."
 ---
 
 {% include demo-video.html src="splatcbf.mp4" caption="Safe next-best-view control in a 3D Gaussian-splat map." %}
@@ -21,6 +21,6 @@ The method is verified in indoor simulation, on an Isaac Kinova manipulator, and
 Ackermann-drive robot. It navigates faster and gathers more information than safety-only and
 perception-only baselines, and gives up informative motion only when safety requires it.
 
-**Preprint, 2026.**
+**Under review** at IEEE ICRA 2027.
 
 - [Paper on arXiv](https://arxiv.org/abs/2609.23100)

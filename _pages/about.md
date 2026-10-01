@@ -11,7 +11,7 @@ redirect_from:
 
 I am a PhD student in [Mechanical Engineering](https://engineering.lehigh.edu/mem) at
 [Lehigh University](https://www.lehigh.edu/) in Bethlehem, Pennsylvania, where I started in 2023.
-I work in the Autonomous and Intelligent Robotics Lab (AIRLab) with
+I work in the [Autonomous and Intelligent Robotics Lab (AIRLab)](https://robotics.lehigh.edu/) with
 [Prof. Nader Motee](https://engineering.lehigh.edu/faculty/nader-motee).
 
 I work on robots that have to stay safe while they are still figuring out what is around them. My
@@ -75,12 +75,19 @@ with consensus ADMM, so no agent needs the full map.
 
 ## Education
 
-- **Ph.D.**, Mechanical Engineering, Lehigh University, 2023&ndash;present
-- **M.S.**, 2025. `TODO: field and institution`
-- **B.S.** `TODO: field, institution, and year`
+- **Ph.D.**, Mechanical Engineering, Lehigh University, 2023&ndash;present.
+  Doctoral general examination passed.
+- **M.S.**, Mechanical Engineering, Lehigh University, 2025
+- **B.Sc.**, Sharif University of Technology, 2023
 
 ## Teaching
 
 Teaching assistant at Lehigh University for **Convex Optimization** and **Control Systems**.
 
-`TODO: any other courses to list here`
+## Technical skills
+
+- **Programming:** Python, C++, MATLAB
+- **Robotics and simulation:** ROS/ROS2, Isaac Sim, Isaac Lab, Habitat-Sim, MuJoCo
+- **Methods and tools:** PyTorch, 3D Gaussian Splatting, control barrier functions,
+  convex optimization, Git, Linux
+- **Platforms:** Kinova Gen3, Ackermann-steered mobile robots, RGB-D cameras
