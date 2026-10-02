@@ -15,8 +15,8 @@ name                     : &name "Amirhossein Mollaei"
 description              : &description "Amirhossein Mollaei, PhD student in Mechanical Engineering at Lehigh University, working on safe active perception, planning and control for robots."
 url                      : "https://amirhosseinmollaei.github.io"
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
-baseurl                  : "/AmirMollaei.github.io" # repo subpath; set to "" if the repo is renamed to AmirhosseinMollaei.github.io
-repository               : "AmirhosseinMollaei/AmirMollaei.github.io"
+baseurl                  : "" # empty: this is a user site served from the domain root
+repository               : "AmirhosseinMollaei/AmirhosseinMollaei.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.

@@ -1,9 +1,9 @@
-# amirmollaei.github.io
+# amirhosseinmollaei.github.io
 
 Personal academic website for Amirhossein Mollaei, PhD student in Mechanical
 Engineering at Lehigh University.
 
-Live at <https://amirmollaei.github.io>.
+Live at <https://amirhosseinmollaei.github.io>.
 
 Built with [Academic Pages](https://github.com/academicpages/academicpages.github.io),
 a fork of the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)
